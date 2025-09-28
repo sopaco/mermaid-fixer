@@ -269,9 +269,9 @@ mermaid-fixer -d ./docs --config custom-config.toml
 ### 修复前
 ```mermaid
 graph TD
-    A[获取数据(get_id)] --> B{验证: status == 200}
-    B -- 是 --> C[记录: cost + time]
-    B -- 否 --> D[错误处理]
+    A[获取数据] --> B{验证响应状态}
+    B -- "是" --> C[记录成本与耗时]
+    B -- "否" --> D[错误处理]
 ```
 
 ### 修复后
@@ -286,24 +286,12 @@ graph TD
 
 #### 节点 ID 问题
 ```mermaid
-// 修复前：节点 ID 中的无效字符
-graph LR
-    A@start --> B#process --> C$end
-
-// 修复后：清洁的节点 ID
 graph LR
     Astart --> Bprocess --> Cend
 ```
 
 #### 箭头标签问题
 ```mermaid
-// 修复前：未加引号的中文标签
-flowchart TD
-    A --> B
-    B -- 成功 --> C
-    B -- 失败 --> D
-
-// 修复后：正确加引号的标签
 flowchart TD
     A --> B
     B -- "成功" --> C

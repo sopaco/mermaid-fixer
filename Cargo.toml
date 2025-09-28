@@ -3,7 +3,7 @@ name = "mermaid-fixer"
 version = "1.0.0"
 edition = "2024"
 
-description = ""
+description = "Automatically detects and fixes syntax errors in Mermaid diagrams within Markdown files"
 license = "MIT"
 repository = "https://github.com/sopaco/mermaid-fixer"
 

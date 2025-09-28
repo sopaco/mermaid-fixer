@@ -43,6 +43,16 @@
 
 ❤️ Like **Mermaid Fixer**? Star it 🌟 or [Sponsor Me](https://github.com/sponsors/sopaco)! ❤️
 
+# 👀 Snapshoots
+<div style="text-align: center;">
+  <table style="width: 100%; margin: 0 auto;">
+    <tr>
+      <td style="width: 50%;"><img src="assets/snapshot-1.webp" alt="snapshot-1" style="width: 100%; height: auto; display: block;"></td>
+      <td style="width: 50%;"><img src="assets/snapshot-2.webp" alt="snapshot-2" style="width: 100%; height: auto; display: block;"></td>
+    </tr>
+  </table>
+</div>
+
 # 🌠 Features & Capabilities
 
 ### Core Capabilities
@@ -269,9 +279,9 @@ After processing, Mermaid Fixer provides comprehensive statistics:
 ### Before Fix
 ```mermaid
 graph TD
-    A[获取数据(get_id)] --> B{验证: status == 200}
-    B -- 是 --> C[记录: cost + time]
-    B -- 否 --> D[错误处理]
+    A[获取数据] --> B{验证响应状态}
+    B -- "是" --> C[记录成本与耗时]
+    B -- "否" --> D[错误处理]
 ```
 
 ### After Fix
@@ -286,24 +296,12 @@ graph TD
 
 #### Node ID Issues
 ```mermaid
-// Before: Invalid characters in node IDs
-graph LR
-    A@start --> B#process --> C$end
-
-// After: Clean node IDs
 graph LR
     Astart --> Bprocess --> Cend
 ```
 
 #### Arrow Label Issues
 ```mermaid
-// Before: Unquoted Chinese labels
-flowchart TD
-    A --> B
-    B -- 成功 --> C
-    B -- 失败 --> D
-
-// After: Properly quoted labels
 flowchart TD
     A --> B
     B -- "成功" --> C

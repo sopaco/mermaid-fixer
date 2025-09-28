@@ -170,15 +170,15 @@ impl Args {
 
 ```mermaid
 graph TD
-    A[用户执行命令] --> B[CLI入口域<br>src/cli.rs]
-    B --> C{config.toml 存在？}
-    C -- 是 --> D[加载 config.toml]
-    C -- 否 --> E[使用 Config::default()]
-    D --> F[逐字段覆盖 LLM/Mermaid/全局配置]
+    A[用户执行命令] --> B[CLI入口域 src_cli_rs]
+    B --> C[配置检查]
+    C -- "是" --> D[加载配置]
+    C -- "否" --> E[使用默认配置]
+    D --> F[逐字段覆盖配置]
     E --> F
-    F --> G[返回完整 Config 对象]
-    G --> H[处理协调域<br>src/processor.rs]
-    H --> I[其他模块：扫描/验证/AI修复/输出]
+    F --> G[返回完整配置对象]
+    G --> H[处理协调域 src_processor_rs]
+    H --> I[其他模块扫描验证AI修复输出]
 
     style B fill:#cce5ff,stroke:#007bff
     style D fill:#f9f,stroke:#333

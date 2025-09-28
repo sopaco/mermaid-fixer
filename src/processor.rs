@@ -8,7 +8,6 @@ use crate::utils::extract_mermaid_blocks;
 
 pub struct MermaidProcessor {
     scanner: MarkdownScanner,
-    validator: MermaidValidator,
     ai_fixer: Option<AiFixer>,
     verbose: bool,
 }
@@ -24,7 +23,6 @@ impl MermaidProcessor {
     pub async fn new(config: &Config, dry_run: bool, verbose: bool) -> Result<Self, Box<dyn std::error::Error>> {
         let scanner = MarkdownScanner::new();
         
-        let validator = MermaidValidator::with_config(config.mermaid.timeout_seconds)?;
         
         let ai_fixer = if dry_run {
             None
@@ -34,7 +32,6 @@ impl MermaidProcessor {
 
         Ok(Self {
             scanner,
-            validator,
             ai_fixer,
             verbose,
         })
@@ -125,6 +122,7 @@ impl MermaidProcessor {
                             match ai_fixer.fix_mermaid(mermaid_code).await {
                                 Ok(fixed_code) => {
                                     // 验证修复后的代码
+                                    let validator = MermaidValidator::with_config(None)?;
                                     match validator.validate(&fixed_code) {
                                         Ok(_) => {
                                             if self.verbose {

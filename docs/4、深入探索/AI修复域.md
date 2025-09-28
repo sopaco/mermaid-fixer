@@ -40,22 +40,22 @@
 
 ```mermaid
 graph TD
-    A[fix_mermaid(原始Mermaid代码)] --> B[从Config获取API配置]
+    A[fix_mermaid原始Mermaid代码] --> B[从Config获取API配置]
     B --> C[构建提示词Prompt]
     C --> D[构造HTTP请求体]
     D --> E[发送POST请求至LLM API]
-    E --> F{HTTP状态码为200?}
-    F -- 否 --> G[抛出ApiRequestError]
-    F -- 是 --> H[解析响应JSON]
-    H --> I{choices[0].message.content为空?}
-    I -- 是 --> J[抛出EmptyResponseError]
-    I -- 否 --> K[尝试解析为FixResponse JSON]
-    K --> L{解析成功?}
-    L -- 是 --> M[提取explanation, changes, fixed_code]
-    L -- 否 --> N[尝试提取```mermaid代码块]
-    N --> O{提取成功?}
-    O -- 是 --> P[返回提取的代码]
-    O -- 否 --> Q[回退：trim响应文本]
+    E --> F[HTTP状态码为200]
+    F -- "否" --> G[抛出ApiRequestError]
+    F -- "是" --> H[解析响应JSON]
+    H --> I[choices0.message.content为空]
+    I -- "是" --> J[抛出EmptyResponseError]
+    I -- "否" --> K[尝试解析为FixResponse JSON]
+    K --> L[解析成功]
+    L -- "是" --> M[提取explanation changes fixed_code]
+    L -- "否" --> N[尝试提取mermaid代码块]
+    N --> O[提取成功]
+    O -- "是" --> P[返回提取的代码]
+    O -- "否" --> Q[回退trim响应文本]
     P --> R[返回修复后代码]
     M --> R
     Q --> R
@@ -177,7 +177,10 @@ pub fn fix_mermaid(&self, mermaid_code: &str) -> Result<String, AiFixError> {
 
 原始代码：
 ```mermaid
-{{MERMAID_CODE}}
+graph TD
+    A[开始] --> B{判断条件}
+    B -->|是| C[执行操作]
+    B -->|否| D[结束]
 ```
 
 请确保：
