@@ -26,7 +26,7 @@
 
 **Mermaid Fixer** is a high-performance AI-driven tool that automatically detects and fixes syntax errors in Mermaid diagrams within Markdown files. Built with Rust for performance and reliability, Mermaid Fixer helps teams maintain accurate and valid Mermaid diagrams with minimal effort.
 
-**Mermaid Fixer** employs a multi-stage workflow combining static syntax validation with AI-powered intelligent fixing. The system uses the mermaid-rs library for precise syntax validation and integrates with large language models (LLMs) to intelligently repair broken diagrams while preserving their original intent and structure.
+**Mermaid Fixer** employs a multi-stage workflow combining static syntax validation with AI-powered intelligent fixing. The system render mermaid in a JS sandbox environment to validate sytax correctness​ and integrates with large language models (LLMs) to intelligently repair broken diagrams while preserving their original intent and structure.
 
 # 😺 Why use Mermaid Fixer
 
@@ -58,7 +58,7 @@
 ### Core Capabilities
 
 - **Automated Scanning**: Recursively scans directories for Markdown files
-- **Precise Detection**: Uses mermaid-rs for accurate syntax validation
+- **Precise Detection**: Uses JS sandbox environment for accurate syntax validation
 - **AI-Powered Fixing**: Leverages LLMs to intelligently repair syntax errors
 - **Comprehensive Reporting**: Provides detailed before/after comparisons
 - **Flexible Configuration**: Supports multiple LLM providers and custom settings
@@ -94,7 +94,7 @@
 
 1. **Scanning Stage**: Recursively discovers all Markdown files in the target directory
 2. **Extraction Stage**: Parses Markdown files and extracts Mermaid code blocks
-3. **Validation Stage**: Uses mermaid-rs to validate each diagram's syntax
+3. **Validation Stage**: Uses JS sandbox environment to validate each diagram's syntax
 4. **Fixing Stage**: Employs AI to repair invalid diagrams while preserving intent
 5. **Re-validation Stage**: Ensures fixed diagrams are syntactically correct
 6. **Saving Stage**: Updates files with corrected diagrams
@@ -257,7 +257,7 @@ mermaid-fixer -d ./docs --config custom-config.toml
 
 1. **Scanning Stage**: Recursively scan specified directory for `.md` and `.markdown` files
 2. **Extraction Stage**: Extract Mermaid code blocks from Markdown files
-3. **Validation Stage**: Validate each code block syntax using mermaid-rs
+3. **Validation Stage**: Validate each code block syntax using JS sandbox environment
 4. **Fixing Stage**: Use AI to repair invalid code blocks
 5. **Re-validation**: Verify that fixed code is syntactically correct
 6. **Saving**: Write corrected content back to original files
@@ -341,14 +341,14 @@ Help improve Mermaid Fixer by reporting bugs or submitting feature requests thro
 # ⚛️ Developed with
 
 - [rust](https://github.com/rust-lang/rust) - Systems programming language for performance and safety
-- [mermaid-rs](https://crates.io/crates/mermaid-rs) - Mermaid syntax validation library
+- [headless_chrome](https://crates.io/crates/headless_chrome) - A high-level API to control headless Chrome or Chromium over the DevTools Protocol
 - [clap](https://github.com/clap-rs/clap) - Command line argument parser
 - [serde](https://github.com/serde-rs/serde) - Serialization framework
 - [tokio](https://github.com/tokio-rs/tokio) - Asynchronous runtime for Rust
 - [reqwest](https://github.com/seanmonstar/reqwest) - HTTP client for LLM API calls
 
 # 🪪 License
-**MIT**. A copy of the license is provided in the [LICENSE](./LICENSE) file.
+**MIT**.
 
 # 👨 About Me
 
