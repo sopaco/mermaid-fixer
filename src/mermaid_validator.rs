@@ -3,6 +3,7 @@ use std::time::Duration;
 
 pub struct MermaidValidator {
     mermaid: Mermaid,
+    #[allow(dead_code)]
     timeout: Duration,
 }
 
@@ -80,6 +81,7 @@ pub enum MermaidValidationError {
     RenderError {
         message: String,
         error_type: MermaidErrorType,
+        #[allow(dead_code)]
         original_code: String,
     },
 }
