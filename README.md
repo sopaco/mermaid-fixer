@@ -279,7 +279,7 @@ After processing, Mermaid Fixer provides comprehensive statistics:
 ### Before Fix
 ```mermaid
 graph TD
-    A[获取数据] --> B{验证响应状态}
+    A[获取数据] --> B{验证响应状态(status)}
     B -- "是" --> C[记录成本与耗时]
     B -- "否" --> D[错误处理]
 ```
@@ -287,7 +287,7 @@ graph TD
 ### After Fix
 ```mermaid
 graph TD
-    A[获取数据] --> B{验证响应状态}
+    A[获取数据] --> B{验证响应状态_Status}
     B -- "是" --> C[记录成本与耗时]
     B -- "否" --> D[错误处理]
 ```
