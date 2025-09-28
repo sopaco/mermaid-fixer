@@ -1,0 +1,20 @@
+[package]
+name = "mermaid-fixer"
+version = "1.0.0"
+edition = "2024"
+
+description = ""
+license = "MIT"
+repository = "https://github.com/sopaco/mermaid-fixer"
+
+[dependencies]
+clap = { version = "4.5.48", features = ["derive"] }
+mermaid-rs = "0.1.1"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+reqwest = { version = "0.11", features = ["json"] }
+
+[dev-dependencies]
+tempfile = "3.0"
