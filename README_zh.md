@@ -26,7 +26,7 @@
 
 **Mermaid Fixer** 是一个高性能的 AI 驱动工具，能够自动检测并修复 Markdown 文件中 Mermaid 图表的语法错误。基于 Rust 构建，确保性能和可靠性，Mermaid Fixer 帮助团队以最小的努力维护准确且有效的 Mermaid 图表。
 
-**Mermaid Fixer** 采用多阶段工作流程，结合静态语法验证和 AI 智能修复。系统使用 mermaid-rs 库进行精确的语法验证，并集成大语言模型 (LLM) 来智能修复损坏的图表，同时保持其原始意图和结构。
+**Mermaid Fixer** 采用多阶段工作流程，结合静态语法验证和 AI 智能修复。系统使用 JS沙盒仿真环境渲染mermaid进行精确的语法验证，并集成大语言模型 (LLM) 来智能修复损坏的图表，同时保持其原始意图和结构。
 
 # 😺 为什么使用 Mermaid Fixer
 
@@ -94,7 +94,7 @@
 
 1. **扫描阶段**：递归发现目标目录中的所有 Markdown 文件
 2. **提取阶段**：解析 Markdown 文件并提取 Mermaid 代码块
-3. **验证阶段**：使用 mermaid-rs 验证每个图表的语法
+3. **验证阶段**：JS沙盒仿真环境渲染mermaid，来检测mermaid图表的正确性
 4. **修复阶段**：使用 AI 修复无效图表，同时保持意图
 5. **重新验证阶段**：确保修复后的图表语法正确
 6. **保存阶段**：使用修正后的图表更新文件
@@ -257,7 +257,7 @@ mermaid-fixer -d ./docs --config custom-config.toml
 
 1. **扫描阶段**：递归扫描指定目录中的 `.md` 和 `.markdown` 文件
 2. **提取阶段**：从 Markdown 文件中提取 Mermaid 代码块
-3. **验证阶段**：使用 mermaid-rs 验证每个代码块的语法
+3. **验证阶段**：JS沙盒仿真环境渲染mermaid，来检测mermaid的正确性
 4. **修复阶段**：使用 AI 修复无效的代码块
 5. **重新验证**：验证修复后的代码语法正确
 6. **保存**：将修正后的内容写回原始文件
@@ -341,7 +341,7 @@ mermaid-fixer -d ./docs --verbose
 # ⚛️ 开发技术栈
 
 - [rust](https://github.com/rust-lang/rust) - 系统编程语言，注重性能和安全性
-- [mermaid-rs](https://crates.io/crates/mermaid-rs) - Mermaid 语法验证库
+- [headless_chrome](https://crates.io/crates/headless_chrome) - 用 Rust 实现的类似 Puppeteer 的库，通过 DevTools 协议控制无头 Chrome 或 Chromium 浏览器，用于网页自动化、测试和爬取等任务。
 - [clap](https://github.com/clap-rs/clap) - 命令行参数解析器
 - [serde](https://github.com/serde-rs/serde) - 序列化框架
 - [tokio](https://github.com/tokio-rs/tokio) - Rust 异步运行时
