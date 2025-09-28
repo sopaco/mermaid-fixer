@@ -41,6 +41,16 @@
 - 企业软件开发者
 - 任何在 Markdown 中使用 Mermaid 的人！
 
+# 👀 运行效果
+<div style="text-align: center;">
+  <table style="width: 100%; margin: 0 auto;">
+    <tr>
+      <td style="width: 50%;"><img src="assets/snapshot-1.webp" alt="snapshot-1" style="width: 100%; height: auto; display: block;"></td>
+      <td style="width: 50%;"><img src="assets/snapshot-2.webp" alt="snapshot-2" style="width: 100%; height: auto; display: block;"></td>
+    </tr>
+  </table>
+</div>
+
 ❤️ 喜欢 **Mermaid Fixer**？给它一个星标 🌟 或者 [赞助我](https://github.com/sponsors/sopaco)！ ❤️
 
 # 🌠 功能特性
