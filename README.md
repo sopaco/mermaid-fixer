@@ -1,5 +1,4 @@
 <p align="center">
-<p align="center">
   <img height="160" src="./assets/banner_litho_mermaid-fixer.webp">
 </p>
 <h3 align="center">Mermaid Fixer</h3>
@@ -13,7 +12,7 @@
 <p align="center">🔧 High-performance <strong>AI-driven</strong> Mermaid diagram syntax fixer built with <strong>Rust</strong></p>
 <p align="center">📊 Automatically detects and fixes syntax errors in Mermaid diagrams within <strong>Markdown files</strong></p>
 <p align="center">
-  <a href="./docs/1、项目概述.md"><img src="https://img.shields.io/badge/Mermaid_Fixer-Docs-blue" /></a>
+  <a href="./docs/1、项目概述.md"><img src="https://img.shields.io/badge/Litho-Docs-blue" /></a>
   <a href="https://crates.io/crates/mermaid-fixer"><img src="https://img.shields.io/crates/v/mermaid-fixer.svg?color=dca282" /></a>
   <a href=""><img src="https://img.shields.io/badge/built_with-Rust-dca282.svg?logo=rust" /></a>
   <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/sopaco/mermaid-fixer/rust.yml">
