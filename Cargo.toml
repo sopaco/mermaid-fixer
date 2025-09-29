@@ -1,6 +1,6 @@
 [package]
 name = "mermaid-fixer"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2024"
 
 description = "Automatically detects and fixes syntax errors in Mermaid diagrams within Markdown files"
