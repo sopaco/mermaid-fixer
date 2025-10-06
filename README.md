@@ -14,7 +14,7 @@
 <p align="center">
   <a href="./docs/1、项目概述.md"><img src="https://img.shields.io/badge/Litho-Docs-blue" /></a>
   <a href="https://crates.io/crates/mermaid-fixer"><img src="https://img.shields.io/crates/v/mermaid-fixer.svg?color=dca282" /></a>
-  <a href=""><img src="https://img.shields.io/badge/built_with-Rust-dca282.svg?logo=rust" /></a>
+  <a href="https://crates.io/crates/mermaid-fixer"><img src="https://img.shields.io/crates/d/mermaid-fixer.svg" /></a>
   <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/sopaco/mermaid-fixer/rust.yml">
 </p>
 <hr />
